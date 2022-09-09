@@ -183,6 +183,7 @@ public class MyMovies2ApplicationTests {
 				return "admin";
 			}
 		};
+
 		given(userMovieRepository.findByUsernameAndMovie(principal.getName(),id.toString())).willReturn(Optional.of(entityUserMovie));
 		given(userMovieRepository.save(entityUserMovie)).willAnswer(invocation -> invocation.getArgument(0));
 
